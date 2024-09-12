@@ -8,12 +8,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentSize
@@ -31,6 +33,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -48,7 +51,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             PracticeAGridTheme {
                 Surface (
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .statusBarsPadding(),
                     color = MaterialTheme.colorScheme.background)
                 {
                     GridApp()
@@ -68,15 +73,15 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun GridApp(){
-        VerticalGrid(DataSource.topics)
+        VerticalGrid()
 
 }
 
 
 @Composable
-fun VerticalGrid(gridTopics: List<Topic>) {
-    LazyVerticalGrid(columns = GridCells.Adaptive(minSize = 200.dp)) {
-        items(gridTopics) { topic ->
+fun VerticalGrid() {
+    LazyVerticalGrid(columns = GridCells.Fixed(2)) {
+        items(DataSource.topics) { topic ->
             GridCard(topic)
         }
     }
@@ -94,8 +99,8 @@ fun VerticalGrid(gridTopics: List<Topic>) {
                     painter = painterResource(id = topic.imageResId),
                     contentDescription = stringResource(id = topic.stringResId),
                     modifier = Modifier
-                        .height(68.dp)
-                        .width(68.dp)
+                        .aspectRatio(1f),
+                    contentScale = ContentScale.Crop
 
                 )
 
