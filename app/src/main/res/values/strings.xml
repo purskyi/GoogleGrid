@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name" translatable="false">Practice A grid</string>
+    <string name="architecture">Architecture</string>
+    <string name="crafts">Crafts</string>
+    <string name="business">Business</string>
+    <string name="culinary">Culinary</string>
+    <string name="design">Design</string>
+    <string name="fashion">Fashion</string>
+    <string name="film">Film</string>
+    <string name="gaming">Gaming</string>
+    <string name="drawing">Drawing</string>
+    <string name="lifestyle">Lifestyle</string>
+    <string name="music">Music</string>
+    <string name="painting">Painting</string>
+    <string name="photography">Photography</string>
+    <string name="tech">Tech</string>
+
+    <integer name="architecture_course_count">58</integer>
+    <integer name="crafts_course_count">121</integer>
+    <integer name="business_course_count">78</integer>
+    <integer name="culinary_course_count">118</integer>
+    <integer name="design_course_count">423</integer>
+    <integer name="fashion_course_count">92</integer>
+    <integer name="film_course_count">165</integer> <integer name="gaming_course_count">164</integer>
+    <integer name="drawing_course_count">326</integer>
+    <integer name="lifestyle_course_count">305</integer>
+    <integer name="music_course_count">212</integer>
+    <integer name="painting_course_count">172</integer>
+    <integer name="photography_course_count">321</integer>
+    <integer name="tech_course_count">118</integer>
+
+</resources>
